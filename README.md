@@ -25,3 +25,17 @@ gcc -c src/intepreter.c
 gcc -c src/main.c
 gcc intepreter.o main.o -o fint.exe
 ```
+
+## Example
+
+### Hello world
+
+```sh
+fint ./sample/hello
+```
+
+output :
+
+```sh
+Hello World!
+```
