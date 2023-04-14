@@ -5,10 +5,10 @@
 
 #define MEMORY_SIZE 30000
 
-// Interpreter src code
+// Interpreter
 void interpreter(char *src) {
-  uint8_t memory[MEMORY_SIZE] = {0};
-  size_t index = 0;
+  uint8_t memory[MEMORY_SIZE] = {0}; // memory array
+  size_t index = 0;                  // memory index
   for (size_t i = 0; src[i] != '\0'; i++) {
     switch (src[i]) {
     case '+':
