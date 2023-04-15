@@ -12,9 +12,19 @@ void interpreter(char *src) {
   for (size_t i = 0; src[i] != '\0'; i++) {
     switch (src[i]) {
     case '+':
+      // integer overflow guard
+      if (memory[index] == 255) {
+        memory[index] = 0;
+        continue;
+      }
       memory[index] += 1;
       break;
     case '-':
+      // integer underflow guard
+      if (memory[index] == 0) {
+        memory[index] = 255;
+        continue;
+      }
       memory[index] -= 1;
       break;
     case '>':
