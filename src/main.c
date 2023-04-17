@@ -32,6 +32,7 @@ int main(int argc, char *argv[]) {
         i += 1;
       }
       interpreter(string);
+      free(string);
       fclose(file);
     }
     break;

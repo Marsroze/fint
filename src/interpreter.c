@@ -13,7 +13,7 @@ void interpreter(char *src) {
     switch (src[i]) {
     case '+':
       // integer overflow guard
-      if (memory[index] == 255) {
+      if (memory[index] == UINT8_MAX) {
         memory[index] = 0;
         continue;
       }
@@ -22,7 +22,7 @@ void interpreter(char *src) {
     case '-':
       // integer underflow guard
       if (memory[index] == 0) {
-        memory[index] = 255;
+        memory[index] = UINT8_MAX;
         continue;
       }
       memory[index] -= 1;
