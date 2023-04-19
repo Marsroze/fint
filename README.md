@@ -7,7 +7,7 @@ It can interprete any valid brainf**ck code safely through:
 - file
 
 ```sh
-usage : fint.exe [-e expression] [filename]
+usage : fint.exe [-e expression] [-f filename]
 ```
 
 ## How to build
@@ -31,7 +31,7 @@ gcc intepreter.o main.o -o fint.exe
 ### Hello world
 
 ```sh
-fint ./sample/hello
+fint -f ./sample/hello
 ```
 
 output :
