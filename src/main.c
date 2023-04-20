@@ -6,7 +6,7 @@
 #include "interpreter.h"
 
 int main(int argc, char *argv[]) {
-  char *HELP = "usage: fint.exe [-e expression] [filepath]";
+  char *HELP = "usage: fint.exe [-e expression] [-f filepath]";
   switch (argc) {
   case 1:
     fprintf(stderr, "%s\n", HELP);
@@ -14,8 +14,17 @@ int main(int argc, char *argv[]) {
   case 2:
     if (strcmp(argv[1], "-e") == 0) {
       fprintf(stderr, "fint.exe -e [expression]\n");
+    } else if (strcmp(argv[1], "-f") == 0) {
+      fprintf(stderr, "fint.exe -f [filepath]\n");
     } else {
-      FILE *file = fopen(argv[1], "rb");
+      fprintf(stderr, "%s\n", HELP);
+    }
+    break;
+  case 3:
+    if (strcmp(argv[1], "-e") == 0 && strcmp(argv[2], "-f") != 0) {
+      interpreter(argv[2]);
+    } else if (strcmp(argv[1], "-f") == 0 && strcmp(argv[2], "-e") != 0) {
+      FILE *file = fopen(argv[2], "rb");
       if (file == NULL) {
         fprintf(stderr, "Error: failed to open the file!\n");
         exit(EXIT_FAILURE);
@@ -34,13 +43,8 @@ int main(int argc, char *argv[]) {
       interpreter(string);
       free(string);
       fclose(file);
-    }
-    break;
-  case 3:
-    if (strcmp(argv[1], "-e") == 0) {
-      interpreter(argv[2]);
     } else {
-      fprintf(stderr, "%s", HELP);
+      fprintf(stderr, "%s\n", HELP);
     }
     break;
   default:
