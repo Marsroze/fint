@@ -6,7 +6,7 @@
 #include "interpreter.h"
 
 int main(int argc, char *argv[]) {
-  char *HELP = "usage: fint.exe [-e expression] [-f filepath]";
+  const char *HELP = "usage: fint.exe [-e expression] [-f filepath]";
   switch (argc) {
   case 1:
     fprintf(stderr, "%s\n", HELP);

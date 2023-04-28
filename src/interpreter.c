@@ -1,3 +1,7 @@
+/*
+ * @file interpreter.c 
+ * @brief An Brainf**k programming language interpreter
+ */
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,7 +9,10 @@
 
 #define MEMORY_SIZE 30000
 
-// Interpreter
+/* @brief Implementation of interpreter
+ * 
+ * @param [src] an array of characters
+ */
 void interpreter(char *src) {
   uint8_t memory[MEMORY_SIZE] = {0}; // memory array
   size_t index = 0;                  // memory index
