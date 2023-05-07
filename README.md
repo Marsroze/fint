@@ -39,3 +39,7 @@ output :
 ```sh
 Hello World!
 ```
+
+## LICENSE
+
+### [MIT](./LICENSE.md)
