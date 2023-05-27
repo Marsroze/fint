@@ -22,7 +22,13 @@ Manually :
 
 ```sh
 gcc -O2 -c src/intepreter.c
+```
+
+```sh
 gcc -O2 -c src/main.c
+```
+
+```sh
 gcc -O2 intepreter.o main.o -o fint.exe
 ```
 
