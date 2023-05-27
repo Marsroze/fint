@@ -21,9 +21,9 @@ make
 Manually :
 
 ```sh
-gcc -c src/intepreter.c
-gcc -c src/main.c
-gcc intepreter.o main.o -o fint.exe
+gcc -O2 -c src/intepreter.c
+gcc -O2 -c src/main.c
+gcc -O2 intepreter.o main.o -o fint.exe
 ```
 
 ## Example
